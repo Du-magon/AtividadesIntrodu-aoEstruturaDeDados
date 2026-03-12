@@ -100,7 +100,7 @@ public class ListaSimples implements ListaOperacoes {
                 removidos++;
             }
         }
-        System.out.println("Total de elementos removidos: " + removidos);
+        System.out.println("\nTotal de elementos removidos: " + removidos);
         return removidos;
     }
     @Override
@@ -111,7 +111,7 @@ public class ListaSimples implements ListaOperacoes {
                 cont++;
             }
         }
-        System.out.println("Total de elementos na lista: " + cont);
+        System.out.println("\nTotal de elementos na lista: " + cont);
         return cont;
     }
     @Override
@@ -121,11 +121,11 @@ public class ListaSimples implements ListaOperacoes {
             if (!estaCheia()) {
                 int pos = encontrarPosicaoVazia();
                 lista[pos] = elementos[i];
-                System.out.println("Elemento \"" + elementos[i] + "\" adicionado na posição " + pos);
+                System.out.println("Elemento " + elementos[i] + " adicionado na posição " + pos);
                 adicionados++;
             }
         }
-        System.out.println("Total de elementos adicionados: " + adicionados);
+        System.out.println("\nTotal de elementos adicionados: " + adicionados);
         return adicionados;
     }
 
@@ -135,13 +135,13 @@ public class ListaSimples implements ListaOperacoes {
             System.out.println("Índice inválido.");
             return null;
         }
-        System.out.println("Elemento encontrado na posição " + indice + ": " + lista[indice]);
+        System.out.println("\nElemento encontrado na posição " + indice + ": " + lista[indice]);
         return lista[indice];
     }
     @Override
     public boolean inserir(int indice, String elemento) {
         if (indice < 0 || indice >= lista.length) {
-            System.out.println("Índice inválido.");
+            System.out.println("\nÍndice inválido.");
             return false;
         }
         if (estaCheia()) {
@@ -151,7 +151,7 @@ public class ListaSimples implements ListaOperacoes {
             lista[i] = lista[i - 1];
         }
         lista[indice] = elemento;
-        System.out.println("Elemento \"" + elemento + "\" inserido na posição " + indice);
+        System.out.println("Elemento " + elemento + " inserido na posição " + indice);
         return true;
     }
     @Override
@@ -162,7 +162,7 @@ public class ListaSimples implements ListaOperacoes {
         }
         String removido = lista[indice];
         lista[indice] = null;
-        System.out.println("Elemento \"" + removido + "\" removido da posição " + indice);
+        System.out.println("Elemento " + removido + " removido da posição " + indice);
         return removido;
     }
 
@@ -171,7 +171,7 @@ public class ListaSimples implements ListaOperacoes {
         for (int i = 0; i < lista.length; i++) {
             lista[i] = null;
         }
-        System.out.println("Todos os elementos da lista foram removidos.");
+        System.out.println("\nTodos os elementos da lista foram removidos.");
     }
     @Override
     public int ultimoIndiceDe(String elemento) {
@@ -182,9 +182,9 @@ public class ListaSimples implements ListaOperacoes {
             }
         }
         if (ultimo >= 0) {
-            System.out.println("Última ocorrência de \"" + elemento + "\" encontrada na posição: " + ultimo);
+            System.out.println("\nÚltima ocorrência de " + elemento + " encontrada na posição: " + ultimo);
         } else {
-            System.out.println("Elemento \"" + elemento + "\" não encontrado.");
+            System.out.println("\nElemento " + elemento + " não encontrado.");
         }
         return ultimo;
     }
@@ -196,7 +196,7 @@ public class ListaSimples implements ListaOperacoes {
                 contador++;
             }
         }
-        System.out.println("O elemento \"" + elemento + "\" aparece " + contador + " vez(es) na lista.");
+        System.out.println("\nO elemento " + elemento + " aparece " + contador + " vez(es) na lista.");
         return contador;
     }
 
@@ -205,12 +205,12 @@ public class ListaSimples implements ListaOperacoes {
         int substituidos = 0;
         for (int i = 0; i < lista.length; i++) {
             if (lista[i] != null && lista[i].equals(antigo)) {
-                System.out.println("Substituindo \"" + antigo + "\" por \"" + novo + "\" na posição " + i);
+                System.out.println("Substituindo " + antigo + " por " + novo + " na posição " + i);
                 lista[i] = novo;
                 substituidos++;
             }
         }
-        System.out.println("Total de substituições realizadas: " + substituidos);
+        System.out.println("\nTotal de substituições realizadas: " + substituidos);
         return substituidos;
     }
 }
