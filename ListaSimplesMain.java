@@ -2,40 +2,45 @@ public class ListaSimplesMain {
 
     public static void main(String[] args) {
 
-        ListaSimples lista = new ListaSimples(7);
+        ListaDinamica lista = new ListaDinamica();
 
         lista.adicionarElemento("Arroz");
         lista.adicionarElemento("Feijão");
         lista.adicionarElemento("Batata");
-        lista.adicionarElemento("Arroz");
+        lista.adicionarElemento("Frango");
+        lista.exibirElementos();
 
+        lista.removerTodas("Batata");
         lista.exibirElementos();
 
         lista.contar();
 
-        lista.obter(1);
+        String[] comidas = {"Carne", "Leite", "Cenoura"};
+        lista.adicionarVarios(comidas);
+        lista.exibirElementos();
 
-        lista.inserir(2, "Carne");
+        lista.obter(2);
+
+        lista.inserir(1, "Batata");
         lista.exibirElementos();
 
         lista.removerPorIndice(3);
         lista.exibirElementos();
 
-        lista.substituir("Arroz", "Macarrão");
-        lista.exibirElementos();
-
-        String[] novos = {"Leite", "Frango", "Cenoura"};
-        lista.adicionarVarios(novos);
-        lista.exibirElementos();
-
-        lista.removerTodas("Macarrão");
-        lista.exibirElementos();
-
-        lista.contarOcorrencias("Leite");
-
-        lista.ultimoIndiceDe("Leite");
-
         lista.limpar();
+        lista.exibirElementos();
+
+        lista.adicionarElemento("Arroz");
+        lista.adicionarElemento("Feijão");
+        lista.adicionarElemento("Batata");
+        lista.adicionarElemento("Arroz");
+        lista.exibirElementos();
+
+        lista.ultimoIndiceDe("Arroz");
+
+        lista.contarOcorrencias("Arroz");
+
+        lista.substituir("Batata", "Cenoura");
         lista.exibirElementos();
     }
 }
